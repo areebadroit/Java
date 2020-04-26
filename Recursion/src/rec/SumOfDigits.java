@@ -1,6 +1,15 @@
 package rec;
-public class SumOfDigits {
-	static int sum=0;
+import java.util.Scanner;
+/*
+Sum of digits (recursive)
+Write a recursive function that returns the sum of the digits of a given integer.
+Sample Input :
+12345
+Sample Output :
+15
+ */
+class DigSum {
+    static int sum=0;
 	public static int sumOfDigits(int input){
 		// Write your code here
         if(input==0)
@@ -10,8 +19,12 @@ public class SumOfDigits {
         sum+=(input%10)+sumOfDigits(input/10);
         return sum;
 	}
+}
+
+public class SumOfDigits {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println(sumOfDigits(1256));
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		System.out.println(DigSum.sumOfDigits(n));
 	}
 }

@@ -1,25 +1,49 @@
 package rec;
-//check whether a number is present in an array or not using recursion;
-public class CheckNumber_Array_Rec {
-		
-		public static boolean checkNumber(int input[], int x) {
-			if(input.length<=0){
-		            return false;
-		        }
-	        else if(input[0]==x){
-	            return true;
+import java.util.Scanner;
+/*
+Check Number in Array
+Given an array of length N and an integer x, you need to find if x is present in the array or not. Return true or false.
+Do this recursively.
+Input Format :
+Line 1 : An Integer N i.e. size of array
+Line 2 : N integers which are elements of the array, separated by spaces
+Line 3 : Integer x
+Output Format :
+true or false
+Constraints :
+1 <= N <= 10^3
+Sample Input :
+3
+9 8 10
+8
+Sample Output :
+true
+ */
+class CheckArray {
+	public static boolean checkNumber(int input[], int x) {
+		if(input.length<=0){
+	            return false;
 	        }
-		        int smallInput[] = new int[input.length - 1];
-				for(int i = 1; i < input.length; i++){
-					smallInput[i - 1] = input[i];
-				}
-		        boolean b = checkNumber(smallInput,x);
-	        return b;
-		}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int input[]= {1,4,7,8,10};//Modify the input here or take input from the user
-		System.out.println(checkNumber(input,23));
+        else if(input[0]==x){
+            return true;
+        }
+	        int smallInput[] = new int[input.length - 1];
+			for(int i = 1; i < input.length; i++){
+				smallInput[i - 1] = input[i];
+			}
+	        boolean b = checkNumber(smallInput,x);
+        return b;
 	}
-
+}
+public class CheckNumber_Array_Rec {
+	static Scanner s = new Scanner(System.in);
+	public static void main(String[] args) {
+		int n = s.nextInt();
+		int input[] = new int[n];
+		for(int i = 0; i < n; i++) {
+			input[i] = s.nextInt();
+		}
+		int x = s.nextInt();
+		System.out.println(CheckArray.checkNumber(input, x));
+	}
 }

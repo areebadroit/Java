@@ -1,7 +1,19 @@
 package rec;
-
-public class CountZeroRec {
-	static int count=0;
+import java.util.Scanner;
+/*
+Count Zeros
+Given an integer n, count and return the number of zeros that are present in the given integer using recursion.
+Input Format :
+Integer n
+Output Format :
+No. of 0s
+Sample Input :
+10204
+Sample Output
+2
+ */
+class CountZero {
+    static int count=0;
 	public static int countZerosRec(int input){
 		// Write your code here
         if(input==0)
@@ -13,34 +25,12 @@ public class CountZeroRec {
         return count;
         
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println(countZerosRec(102060));
-	}
-
 }
-//package rec;
-//
-//public class CountZeroRec {
-//	//static int count=0;
-//	public static int countZerosRec(int input){
-//		// Write your code here
-//        if(input==0) {
-//        	//System.out.println(1);
-//            return 1;
-//            }
-//        int n=countZerosRec(input/10);
-//        int d=input%10;
-//        if(d==0)
-//            n=n+1;
-//        //System.out.println(count);
-//        return n;
-//        
-//	}
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//		//System.out.println(102060);
-//		System.out.println(countZerosRec(3005060)-1);
-//	}
-//
-//}
+
+public class CountZeroRec {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		System.out.println(CountZero.countZerosRec(n));
+	}
+}
